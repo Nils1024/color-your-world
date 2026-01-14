@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Paint : MonoBehaviour
 {
@@ -28,14 +28,15 @@ public class Paint : MonoBehaviour
 
         if(isHit)
         {
-            GameObject hitGameObject = interactionRayHit.transform.gameObject;
-
-            MeshRenderer gameObjectRenderer = hitGameObject.GetComponent<MeshRenderer>();
-
-            List<Material> newMaterials = new List<Material>();
-            newMaterials.Add(newMaterial);
+            var mouse = Mouse.current;
             
-            gameObjectRenderer.SetMaterials(newMaterials);
+            if (mouse.leftButton.wasPressedThisFrame)
+            {
+                if(interactionRayHit.collider.TryGetComponent(out Objects.Colorable colorable))
+                {
+                    colorable.OnClick();
+                }
+            }
         }
     }
 }
