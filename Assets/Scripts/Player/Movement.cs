@@ -13,6 +13,7 @@ namespace Player
         public float gravity = 10f;
         public float lookSpeed = 1f;
         public float lookXLimit = 45f;
+        public bool isLocked = false;
 
         private Vector3 _moveDirection = Vector3.zero;
         private float _rotationX;
@@ -28,6 +29,11 @@ namespace Player
 
         private void Update()
         {
+            if(isLocked)
+            {
+                return;
+            }
+            
             var keyboard = Keyboard.current;
             var mouse = Mouse.current;
 
