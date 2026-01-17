@@ -12,8 +12,9 @@ public class MainMenu : MonoBehaviour
 
     private bool _playClicked = false;
     private Mouse _mouse = Mouse.current;
+    private LevelData _currentHovered;
     
-    public void playGame()
+    public void PlayGame()
     {
         mainMenu.SetActive(false);
         background.SetActive(false);
@@ -21,34 +22,44 @@ public class MainMenu : MonoBehaviour
         _playClicked = true;
     }
 
-    public void quitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }
 
     private void Update()
     {
-        if(_playClicked)
+        if(!_playClicked)
+            return;
+        
+        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+        
+        Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red, 1f);
+        
+        if(Physics.Raycast(ray, out RaycastHit hit, 100f))
         {
-            Debug.Log("Mouse raycast");
-            RaycastHit hitInfo = new RaycastHit();
-            Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
-
-            var ray = Camera.main.ScreenPointToRay(mouseScreenPos);
-            
-            Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red, 1f);
-            if(Physics.Raycast(ray, out hitInfo, 100f))
+            if(hit.collider.TryGetComponent<LevelData>(out var levelData))
             {
-                if(hitInfo.collider.TryGetComponent<LevelData>(out var levelData))
+                if (_currentHovered != levelData)
                 {
-                    levelData.Hover();
-
-                    if (_mouse.leftButton.wasPressedThisFrame)
-                    {
-                        levelData.Click();
-                    }
+                    _currentHovered?.Unhover();
+                    _currentHovered = levelData;
+                    _currentHovered.Hover();
                 }
+                
+                if (Mouse.current.leftButton.wasPressedThisFrame)
+                {
+                    levelData.Click();
+                }
+                
+                return;
             }
+        }
+        
+        if (_currentHovered != null)
+        {
+            _currentHovered.Unhover();
+            _currentHovered = null;
         }
     }
 }

@@ -1,5 +1,5 @@
+using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,16 +8,34 @@ public class LevelData : MonoBehaviour
     public int sceneNumber;
     public Material baseMaterial;
     public Material hoverMaterial;
+    
+    private Renderer _gameObjectRenderer;
+    private List<Material> _materials = new List<Material>();
+
+    private void Awake()
+    {
+        _gameObjectRenderer = gameObject.GetComponent<Renderer>();
+        
+        _materials.Clear();
+        _materials.Add(baseMaterial);
+        _gameObjectRenderer.SetMaterials(_materials);
+    }
 
     public void Hover()
     {
-        Renderer _gameObjectRenderer = gameObject.GetComponent<Renderer>();
+        _materials.Clear();
+        _materials.Add(baseMaterial);
+        _materials.Add(hoverMaterial);
         
-        List<Material> newMaterials = new List<Material>();
-        newMaterials.Add(baseMaterial);
-        newMaterials.Add(hoverMaterial);
+        _gameObjectRenderer.SetMaterials(_materials);
+    }
+    
+    public void Unhover()
+    {
+        _materials.Clear();
+        _materials.Add(baseMaterial);
         
-        _gameObjectRenderer.SetMaterials(newMaterials);
+        _gameObjectRenderer.SetMaterials(_materials);
     }
 
     public void Click()
