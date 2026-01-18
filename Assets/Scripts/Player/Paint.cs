@@ -29,7 +29,7 @@ namespace Player
             {
                 var mouse = Mouse.current;
             
-                if (mouse.leftButton.wasPressedThisFrame)
+                if (mouse.leftButton.isPressed)
                 {
                     if(interactionRayHit.collider.TryGetComponent(out Objects.Colorable colorable))
                     {

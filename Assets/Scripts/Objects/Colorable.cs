@@ -5,25 +5,30 @@ namespace Objects
 {
     public class Colorable : MonoBehaviour
     {
-        public bool isColorable = true;
-        public Material material;
+        public List<Material> uncoloredMaterials;
+        public List<Material> coloredMaterials;
 
         private Renderer _gameObjectRenderer;
+        private bool _isColored;
 
         private void Awake()
         {
             _gameObjectRenderer = GetComponent<Renderer>();
+            _gameObjectRenderer.SetMaterials(uncoloredMaterials);
         }
 
         public void OnClick()
         {
-            if (isColorable)
+            if(!_isColored)
             {
-                List<Material> newMaterials = new List<Material>();
-                newMaterials.Add(material);
-
-                _gameObjectRenderer.SetMaterials(newMaterials);
+                _gameObjectRenderer.SetMaterials(coloredMaterials);
+                _isColored = true;
             }
+        }
+
+        public bool isColored()
+        {
+            return _isColored;
         }
     }
 }

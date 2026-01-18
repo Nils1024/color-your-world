@@ -56,7 +56,7 @@ public class MainMenu : MonoBehaviour
             }
         }
         
-        if (_currentHovered != null)
+        if(_currentHovered != null)
         {
             _currentHovered.Unhover();
             _currentHovered = null;
