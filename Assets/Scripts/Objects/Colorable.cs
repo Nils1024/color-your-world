@@ -7,6 +7,7 @@ namespace Objects
     {
         public List<Material> uncoloredMaterials;
         public List<Material> coloredMaterials;
+        public bool colorAllOtherObjects;
 
         private Renderer _gameObjectRenderer;
         private bool _isColored;
@@ -23,6 +24,20 @@ namespace Objects
             {
                 _gameObjectRenderer.SetMaterials(coloredMaterials);
                 _isColored = true;
+                
+                if(colorAllOtherObjects)
+                {
+                    foreach (Transform child in transform.parent)
+                    {
+                        if(child.gameObject == gameObject)
+                            continue;
+                    
+                        if (child.TryGetComponent(out Colorable childColorable))
+                        {
+                            childColorable.OnClick();
+                        }
+                    }
+                }
             }
         }
 

@@ -10,6 +10,7 @@ namespace  UI
         public GameObject ingameMenu;
         public GameObject map;
         public Movement playerMovement;
+        public Timer timer;
     
         private Keyboard _keyboard = Keyboard.current;
     
@@ -26,7 +27,7 @@ namespace  UI
     
         public void BackToMainMenu()
         {
-            SceneManager.LoadSceneAsync(1);
+            SceneManager.LoadSceneAsync(0);
         }
 
         public void ShowHint()
@@ -44,11 +45,13 @@ namespace  UI
                 {
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
+                    timer.Stop();
                 }
                 else
                 {
                     Cursor.lockState = CursorLockMode.Locked;
                     Cursor.visible = false;
+                    timer.Resume();
                 }
             
                 playerMovement.isLocked = ingameMenu.activeSelf;

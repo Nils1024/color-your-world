@@ -1,3 +1,4 @@
+using Objects;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -31,7 +32,7 @@ namespace Player
             
                 if (mouse.leftButton.isPressed)
                 {
-                    if(interactionRayHit.collider.TryGetComponent(out Objects.Colorable colorable))
+                    if(interactionRayHit.collider.TryGetComponent(out Colorable colorable))
                     {
                         colorable.OnClick();
                     }

@@ -2696,7 +2696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd473febe04a7dd41907d79ebb722ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  sceneNumber: 0
+  sceneNumber: 1
   baseMaterial: {fileID: 2100000, guid: 9570c5bb97ad04f49bb51119754b1956, type: 2}
   hoverMaterial: {fileID: 2100000, guid: 40700cb63e4983b45bfbae5dbf4315ca, type: 2}
 --- !u!1 &403611720
@@ -3780,7 +3780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd473febe04a7dd41907d79ebb722ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  sceneNumber: 0
+  sceneNumber: 1
   baseMaterial: {fileID: 2100000, guid: 9570c5bb97ad04f49bb51119754b1956, type: 2}
   hoverMaterial: {fileID: 2100000, guid: 40700cb63e4983b45bfbae5dbf4315ca, type: 2}
 --- !u!1 &582405950
@@ -4615,7 +4615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd473febe04a7dd41907d79ebb722ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  sceneNumber: 0
+  sceneNumber: 1
   baseMaterial: {fileID: 2100000, guid: 9570c5bb97ad04f49bb51119754b1956, type: 2}
   hoverMaterial: {fileID: 2100000, guid: 40700cb63e4983b45bfbae5dbf4315ca, type: 2}
 --- !u!1 &671136658
@@ -5094,7 +5094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd473febe04a7dd41907d79ebb722ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  sceneNumber: 0
+  sceneNumber: 1
   baseMaterial: {fileID: 2100000, guid: 9570c5bb97ad04f49bb51119754b1956, type: 2}
   hoverMaterial: {fileID: 2100000, guid: 40700cb63e4983b45bfbae5dbf4315ca, type: 2}
 --- !u!1001 &718429884

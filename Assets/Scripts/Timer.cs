@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    public String format = "0:00:00";
-    
     private TextMeshProUGUI _timerText;
     private float _elapsedTime;
+    private bool isStopped;
 
     private void Awake()
     {
@@ -15,9 +14,27 @@ public class Timer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        _elapsedTime += Time.deltaTime;
-        _timerText.text = _elapsedTime.ToString(format);
+        if (!isStopped)
+        {
+            _elapsedTime += Time.deltaTime;
+            
+            int totalSeconds = Mathf.FloorToInt(_elapsedTime);
+            int minutes = totalSeconds / 60;
+            int seconds = totalSeconds % 60;
+
+            _timerText.text = $"{minutes:00}:{seconds:00}";
+        }
+    }
+    
+    public void Stop()
+    {
+        isStopped = true;
+    }
+    
+    public void Resume()
+    {
+        isStopped = false;
     }
 }
