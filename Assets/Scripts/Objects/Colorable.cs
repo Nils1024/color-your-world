@@ -34,7 +34,10 @@ namespace Objects
                     
                         if (child.TryGetComponent(out Colorable childColorable))
                         {
-                            childColorable.OnClick();
+                            if (childColorable.colorAllOtherObjects)
+                            {
+                                childColorable.OnClick();
+                            }
                         }
                     }
                 }
