@@ -130,6 +130,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
   coloredMaterials:
   - {fileID: 2100000, guid: 3c5c53cc4c5a65c44a13ab31a69f4763, type: 2}
+  colorAllOtherObjects: 0
 --- !u!1 &2279962459020410366
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +160,7 @@ Transform:
   m_GameObject: {fileID: 2279962459020410366}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.406, y: 0.107, z: 3.25}
+  m_LocalPosition: {x: -7.406, y: 0.107, z: 2.99}
   m_LocalScale: {x: 0.99200004, y: -0.080796145, z: 0.13982289}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -260,6 +261,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
   coloredMaterials:
   - {fileID: 2100000, guid: b26f2e3b44f5376489b0805c2d3646b5, type: 2}
+  colorAllOtherObjects: 0
 --- !u!1 &4107348241161553890
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,6 +392,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
   coloredMaterials:
   - {fileID: 2100000, guid: 3c5c53cc4c5a65c44a13ab31a69f4763, type: 2}
+  colorAllOtherObjects: 0
 --- !u!1 &4966615820215367997
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +422,7 @@ Transform:
   m_GameObject: {fileID: 4966615820215367997}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.065, y: 0.107, z: 3.25}
+  m_LocalPosition: {x: -9.065, y: 0.107, z: 2.9899998}
   m_LocalScale: {x: 0.99200004, y: -0.080796145, z: 0.13982289}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -520,6 +523,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
   coloredMaterials:
   - {fileID: 2100000, guid: b26f2e3b44f5376489b0805c2d3646b5, type: 2}
+  colorAllOtherObjects: 0
 --- !u!1 &5388084375289237211
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +654,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
   coloredMaterials:
   - {fileID: 2100000, guid: 06c598fb2f137a8448dfcc85ff059cd7, type: 2}
+  colorAllOtherObjects: 0
 --- !u!1 &6908042074688965691
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,7 +684,7 @@ Transform:
   m_GameObject: {fileID: 6908042074688965691}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.836, y: 0.107, z: 3.25}
+  m_LocalPosition: {x: -10.836, y: 0.107, z: 2.9899998}
   m_LocalScale: {x: 0.99200004, y: -0.080796145, z: 0.13982289}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -780,6 +785,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
   coloredMaterials:
   - {fileID: 2100000, guid: b26f2e3b44f5376489b0805c2d3646b5, type: 2}
+  colorAllOtherObjects: 0
 --- !u!1 &9168269976095366049
 GameObject:
   m_ObjectHideFlags: 0
