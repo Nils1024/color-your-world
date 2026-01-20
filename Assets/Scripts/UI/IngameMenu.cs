@@ -19,14 +19,10 @@ namespace  UI
             ingameMenu.SetActive(false);
             playerMovement.isLocked = false;
         }
-
-        public void SaveGame()
-        {
-            Debug.Log("Save Game");
-        }
     
         public void BackToMainMenu()
         {
+            //TODO: Add saving
             SceneManager.LoadSceneAsync(0);
         }
 

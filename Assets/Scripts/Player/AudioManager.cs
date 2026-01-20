@@ -1,24 +1,25 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
-public class AudioManager : MonoBehaviour
+namespace Player
 {
-    public List<AudioClip> audioClips;
-    private AudioSource audioSource;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [RequireComponent(typeof(AudioSource))]
+    public class AudioManager : MonoBehaviour
     {
-        audioSource = GetComponent<AudioSource>();
-        audioSource.Play();
-    }
+        public List<AudioClip> audioClips;
+        private AudioSource audioSource;
 
-    // Update is called once per frame
-    void Update()
-    {
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start()
+        {
+            audioSource = GetComponent<AudioSource>();
+            audioSource.Play();
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
         
+        }
     }
 }

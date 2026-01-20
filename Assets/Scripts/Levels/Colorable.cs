@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Objects
+namespace Levels
 {
     public class Colorable : MonoBehaviour
     {
