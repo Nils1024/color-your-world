@@ -15,11 +15,5 @@ namespace Player
             audioSource = GetComponent<AudioSource>();
             audioSource.Play();
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
     }
 }

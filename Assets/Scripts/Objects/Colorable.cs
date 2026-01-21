@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Levels
+namespace Objects
 {
     public class Colorable : MonoBehaviour
     {
@@ -22,8 +22,7 @@ namespace Levels
         {
             if(!_isColored)
             {
-                _gameObjectRenderer.SetMaterials(coloredMaterials);
-                _isColored = true;
+                Color();
                 
                 if(colorAllOtherObjects)
                 {
@@ -32,16 +31,34 @@ namespace Levels
                         if(child.gameObject == gameObject)
                             continue;
                     
-                        if (child.TryGetComponent(out Colorable childColorable))
-                        {
-                            if (childColorable.colorAllOtherObjects)
-                            {
-                                childColorable.OnClick();
-                            }
-                        }
+                        CheckAndPropagate(child);
                     }
                 }
             }
+        }
+
+        private void CheckAndPropagate(Transform target)
+        {
+            if (target.TryGetComponent(out Colorable targetColorable))
+            {
+                if (targetColorable.colorAllOtherObjects)
+                {
+                    targetColorable.OnClick();
+                }
+            }
+            else
+            {
+                foreach (Transform child in target)
+                {
+                    CheckAndPropagate(child);
+                }
+            }
+        }
+
+        public void Color()
+        {
+            _gameObjectRenderer.SetMaterials(coloredMaterials);
+            _isColored = true;
         }
 
         public bool isColored()

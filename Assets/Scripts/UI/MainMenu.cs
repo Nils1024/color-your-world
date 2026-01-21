@@ -1,33 +1,37 @@
-using Levels;
 using Unity.Cinemachine;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace UI
 {
     public class MainMenu : MonoBehaviour
     {
         public CinemachineCamera vcam;
-        public GameObject mainMenu;
-        public GameObject levelSelectMenu;
-        public GameObject background;
-
+        public GameObject levelSelection;
+        public GameObject settingsMenu;
+        
+        private CinemachineSplineDolly _spline;
         private bool _playClicked;
-        private bool _levelClicked;
-        private Level _currentHovered;
+        private bool _reachedSplineEnd;
 
         private void Awake()
         {
-            mainMenu.SetActive(true);
-            background.SetActive(true);
+            _spline = vcam.GetComponent<CinemachineSplineDolly>();
         }
 
         public void PlayGame()
         {
-            mainMenu.SetActive(false);
-            background.SetActive(false);
             vcam.gameObject.SetActive(true);
             _playClicked = true;
+
+            foreach (Transform child in transform)
+            {
+                child.gameObject.SetActive(false);
+            }
+        }
+
+        public void OpenSettings()
+        {
+            Debug.Log("open settings not implemented yet");
         }
 
         public void QuitGame()
@@ -35,64 +39,23 @@ namespace UI
             Application.Quit();
         }
 
-        public void LoadLevel()
-        {
-            _currentHovered.Load();
-        }
-
-        public void ShowLevelLeaderboard()
-        {
-            
-        }
-
-        public void ResetLevel()
-        {
-            
-        }
-
-        public void CloseLevelMenu()
-        {
-            _levelClicked = false;
-            levelSelectMenu.SetActive(false);
-        }
-
         private void Update()
         {
-            if(!_playClicked)
-                return;
-
-            if(_levelClicked)
-                return;
-            
-            Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-            
-            Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red, 1f);
-            
-            if(Physics.Raycast(ray, out RaycastHit hit, 100f))
+            if (!_playClicked)
             {
-                if(hit.collider.TryGetComponent<Level>(out var levelData))
-                {
-                    if (_currentHovered != levelData)
-                    {
-                        _currentHovered?.Unhover();
-                        _currentHovered = levelData;
-                        _currentHovered.Hover();
-                    }
-                    
-                    if (Mouse.current.leftButton.wasPressedThisFrame)
-                    {
-                        _levelClicked = true;
-                        levelSelectMenu.SetActive(true);
-                    }
-                    
-                    return;
-                }
+                return;
             }
             
-            if(_currentHovered != null)
+            if (_spline.CameraPosition >= 1.0f)
             {
-                _currentHovered.Unhover();
-                _currentHovered = null;
+                _reachedSplineEnd = true;
+            }
+            
+            if (_reachedSplineEnd && _playClicked)
+            {
+                gameObject.SetActive(false);
+                levelSelection.SetActive(true);
+                _playClicked = false;
             }
         }
     }

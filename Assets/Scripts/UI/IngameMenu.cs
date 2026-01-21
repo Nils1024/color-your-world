@@ -1,4 +1,5 @@
 using Player;
+using Services;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -12,7 +13,7 @@ namespace  UI
         public Movement playerMovement;
         public Timer timer;
     
-        private Keyboard _keyboard = Keyboard.current;
+        private readonly Keyboard _keyboard = Keyboard.current;
     
         public void ResumeGame()
         {
@@ -22,13 +23,13 @@ namespace  UI
     
         public void BackToMainMenu()
         {
-            //TODO: Add saving
+            SaveService.SaveGameState();
             SceneManager.LoadSceneAsync(0);
         }
 
         public void ShowHint()
         {
-        
+            Debug.Log("Show Hint not implemented yet");
         }
 
         private void Update()

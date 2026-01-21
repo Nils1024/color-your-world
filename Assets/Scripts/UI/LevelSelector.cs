@@ -1,0 +1,117 @@
+﻿using System.Collections.Generic;
+using Objects;
+using Services;
+using TMPro;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+namespace UI
+{
+    public class LevelSelector : MonoBehaviour
+    {
+        public Material baseMaterial;
+        public Material hoverMaterial;
+        public GameObject levelSelectMenu;
+        public TextMeshProUGUI levelText;
+        public TextMeshProUGUI timerText;
+        
+        private readonly List<Material> _materials = new List<Material>();
+        private bool _levelClicked;
+        private Level _currentHovered;
+        
+        private void Awake()
+        {
+            levelSelectMenu.SetActive(false);
+            levelText.gameObject.SetActive(false);
+            timerText.gameObject.SetActive(false);
+            
+            _materials.Add(baseMaterial);
+        }
+        
+        private void Update()
+        {
+            if(_levelClicked)
+                return;
+            
+            if(Util.RaycastCreator.RayCastFromCamera(Camera.main, 100f, out var hit, true))
+            {
+                if(hit.collider.TryGetComponent<Level>(out var levelData))
+                {
+                    if (_currentHovered != levelData)
+                    {
+                        if (_currentHovered != null)
+                        {
+                            Unhover(_currentHovered.gameObject);
+                        }
+                        
+                        _currentHovered = levelData;
+                        Hover(_currentHovered.gameObject);
+                    }
+                    
+                    if (Mouse.current.leftButton.wasPressedThisFrame)
+                    {
+                        _levelClicked = true;
+                        levelSelectMenu.SetActive(true);
+                    }
+                    
+                    return;
+                }
+            }
+            
+            if(_currentHovered != null)
+            {
+                Unhover(_currentHovered.gameObject);
+                levelText.gameObject.SetActive(false);
+                timerText.gameObject.SetActive(false);
+                _currentHovered = null;
+            }
+        }
+        
+        public void LoadLevel()
+        {
+            Debug.Log(_currentHovered.level);
+            LevelService.LoadLevel(_currentHovered.level);
+        }
+
+        public void ShowLevelLeaderboard()
+        {
+            Debug.Log("Leaderboard not implemented yet");
+        }
+
+        public void ResetLevel()
+        {
+            Debug.Log("Reset not implemented yet");
+        }
+
+        public void CloseLevelMenu()
+        {
+            _levelClicked = false;
+            levelSelectMenu.SetActive(false);
+        }
+
+        private void Hover(GameObject target)
+        {
+            Renderer gameObjectRenderer = target.GetComponent<Renderer>();
+            
+            _materials.Clear();
+            _materials.Add(baseMaterial);
+            _materials.Add(hoverMaterial);
+        
+            gameObjectRenderer.SetMaterials(_materials);
+            
+            levelText.gameObject.SetActive(true);
+            timerText.gameObject.SetActive(true);
+            levelText.SetText(_currentHovered.level.ToString());
+        }
+    
+        private void Unhover(GameObject target)
+        {
+            Renderer gameObjectRenderer = target.GetComponent<Renderer>();
+            
+            _materials.Clear();
+            _materials.Add(baseMaterial);
+        
+            gameObjectRenderer.SetMaterials(_materials);
+        }
+    }
+}
