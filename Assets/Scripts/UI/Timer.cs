@@ -5,8 +5,9 @@ namespace UI
 {
     public class Timer : MonoBehaviour
     {
+        public float elapsedTime;
+        
         private TextMeshProUGUI _timerText;
-        private float _elapsedTime;
         private bool isStopped;
 
         private void Awake()
@@ -19,9 +20,9 @@ namespace UI
         {
             if (!isStopped)
             {
-                _elapsedTime += Time.deltaTime;
+                elapsedTime += Time.deltaTime;
             
-                int totalSeconds = Mathf.FloorToInt(_elapsedTime);
+                int totalSeconds = Mathf.FloorToInt(elapsedTime);
                 int minutes = totalSeconds / 60;
                 int seconds = totalSeconds % 60;
 

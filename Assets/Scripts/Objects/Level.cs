@@ -7,7 +7,5 @@ namespace Objects
     public class Level : MonoBehaviour
     {
         public LevelService.Levels level;
-        
-        
     }
 }

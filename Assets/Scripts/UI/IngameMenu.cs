@@ -23,7 +23,15 @@ namespace  UI
     
         public void BackToMainMenu()
         {
-            SaveService.SaveGameState();
+            if(SaveService.SaveGameState())
+            {
+                Debug.Log("Game saved");
+            }
+            else
+            {
+                Debug.Log("Game not saved");
+            }
+            
             SceneManager.LoadSceneAsync(0);
         }
 

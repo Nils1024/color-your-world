@@ -1,8 +1,12 @@
 
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Objects;
+using UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Services
 {
@@ -14,7 +18,7 @@ namespace Services
         {
             string filePathSaveData = Application.persistentDataPath + SAVEDATA_FILENAME;
 
-            if (LevelService.CurrentSelectedLevel != null)
+            if (LevelService.CurrentSelectedLevel != LevelService.Levels.NONE)
             {
                 LevelData levelData = new LevelData(LevelService.CurrentSelectedLevel);
                 SaveData saveData = new SaveData(levelData);
@@ -27,29 +31,50 @@ namespace Services
             
             return false;
         }
+        
+        
     }
 
     [Serializable]
     public class SaveData
     {
-        [SerializeField] LevelData _levelData;
+        [SerializeField] public LevelData levelData;
         
         public SaveData(LevelData levelData)
         {
-            _levelData = levelData;
+            this.levelData = levelData;
         }
     }
     
     [Serializable]
     public class LevelData
     {
-        [SerializeField] string levelName;
-        [SerializeField] double elapsedTime;
-        [SerializeField] object coloredObjects;
+        public string levelName;
+        [SerializeField] public double elapsedTime;
+        [SerializeField] public List<String> colorablesID;
 
-        public LevelData(Level level)
+        public LevelData(LevelService.Levels level)
         {
-            
+            colorablesID = new List<String>();
+            levelName = level.ToString();
+
+            if (LevelService.CurrentSelectedLevel != LevelService.Levels.NONE)
+            {
+                Scene currentlyLoadedScene = SceneManager.GetActiveScene();
+                
+                foreach (GameObject root in currentlyLoadedScene.GetRootGameObjects())
+                {
+                    colorablesID.AddRange(root.GetComponentsInChildren<Colorable>(true)
+                        .Where(c => c.isColored())
+                        .Select(c => c.UniqueId));
+                    
+                    var timer = root.GetComponentInChildren<Timer>(true);
+                    if (timer != null)
+                    {
+                        elapsedTime = timer.elapsedTime;
+                    }
+                }
+            }
         }
     }
 }

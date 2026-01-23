@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,6 +6,9 @@ namespace Objects
 {
     public class Colorable : MonoBehaviour
     {
+        [SerializeField] private string uniqueColorableId;
+        public string UniqueId => uniqueColorableId;
+        
         public List<Material> uncoloredMaterials;
         public List<Material> coloredMaterials;
         public bool colorAllOtherObjects;
@@ -17,6 +21,17 @@ namespace Objects
             _gameObjectRenderer = GetComponent<Renderer>();
             _gameObjectRenderer.SetMaterials(uncoloredMaterials);
         }
+        
+        #if UNITY_EDITOR
+            private void OnValidate()
+            {
+                if (string.IsNullOrEmpty(uniqueColorableId))
+                {
+                    uniqueColorableId = Guid.NewGuid().ToString();
+                    UnityEditor.EditorUtility.SetDirty(this);
+                }
+            }
+        #endif
 
         public void OnClick()
         {
