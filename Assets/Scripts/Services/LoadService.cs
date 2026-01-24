@@ -24,7 +24,7 @@ namespace Services
                 foreach (GameObject root in currentlyLoadedScene.GetRootGameObjects())
                 {
                     alreadyColored.AddRange(root.GetComponentsInChildren<Colorable>(true)
-                        .Where(c => saveData.levelData.colorablesID.Contains(c.UniqueId)));
+                        .Where(c => saveData.levelData.data[LevelService.CurrentSelectedLevel.ToString()].colorablesID.Contains(c.UniqueId)));
                 }
 
                 foreach (Colorable colorable in alreadyColored)

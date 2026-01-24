@@ -2,14 +2,12 @@ using Player;
 using Services;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 namespace  UI
 {
     public class IngameMenu : MonoBehaviour
     {
         public GameObject ingameMenu;
-        public GameObject map;
         public Movement playerMovement;
         public Timer timer;
     
@@ -23,16 +21,7 @@ namespace  UI
     
         public void BackToMainMenu()
         {
-            if(SaveService.SaveGameState())
-            {
-                Debug.Log("Game saved");
-            }
-            else
-            {
-                Debug.Log("Game not saved");
-            }
-            
-            SceneManager.LoadSceneAsync(0);
+            LevelService.LoadMainMenu();
         }
 
         public void ShowHint()

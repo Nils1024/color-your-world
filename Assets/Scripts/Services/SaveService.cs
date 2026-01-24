@@ -7,6 +7,7 @@ using Objects;
 using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Util;
 
 namespace Services
 {
@@ -31,18 +32,17 @@ namespace Services
             
             return false;
         }
-        
-        
     }
 
     [Serializable]
     public class SaveData
     {
-        [SerializeField] public LevelData levelData;
+        [SerializeField] public SerializableDictionary<string, LevelData> levelData;
         
         public SaveData(LevelData levelData)
         {
-            this.levelData = levelData;
+            this.levelData = new SerializableDictionary<string, LevelData>();
+            this.levelData.data.Add(levelData.levelName, levelData);
         }
     }
     

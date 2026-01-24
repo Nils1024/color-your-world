@@ -22,6 +22,13 @@ namespace Services
             SceneManager.LoadScene((int) level);
             CurrentSelectedLevel = level;
         }
+        
+        public static void LoadMainMenu()
+        {
+            SaveService.SaveGameState();
+            CurrentSelectedLevel = Levels.NONE;
+            SceneManager.LoadSceneAsync(0);
+        }
 
         private static void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
@@ -35,11 +42,6 @@ namespace Services
             {
                 Debug.Log("Level Not Loaded");
             }
-        }
-
-        public static void LoadMainMenu()
-        {
-            
         }
     }
 }
