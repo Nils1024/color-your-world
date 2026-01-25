@@ -1,3 +1,4 @@
+using System.Collections;
 using Objects;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,12 +8,12 @@ namespace Player
     public class Paint : MonoBehaviour
     {
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             InteractRaycast();
         }
 
-        void InteractRaycast()
+        private void InteractRaycast()
         {
             Vector3 playerPosition = transform.position;
             Vector3 forwardDirection = transform.forward;
@@ -34,10 +35,58 @@ namespace Player
                 {
                     if(interactionRayHit.collider.TryGetComponent(out Colorable colorable))
                     {
+                        if (!colorable.isColored())
+                        {
+                            CreateLine(
+                                transform.position - new Vector3(0, 0.5f, 0),
+                                interactionRayHit.point,
+                                colorable.coloredMaterials[0]);
+                        }
+                        
                         colorable.OnClick();
                     }
                 }
             }
+        }
+
+        private void CreateLine(Vector3 start, Vector3 end, Material material)
+        {
+            GameObject line = new GameObject("Line");
+            LineRenderer lr = line.AddComponent<LineRenderer>();
+            
+            lr.material = material;
+            lr.positionCount = 2;
+            lr.startWidth = 0.1f;
+            lr.endWidth = 0.1f;
+            lr.useWorldSpace = true;
+            lr.numCapVertices = 16;
+            lr.numCornerVertices = 16;
+            lr.textureMode = LineTextureMode.Stretch;
+            lr.alignment = LineAlignment.View;
+            
+            lr.SetPosition(0, start);
+            lr.SetPosition(1, end);
+
+            StartCoroutine(FadeAndDestroyLine(lr, 0.25f));
+        }
+
+        private IEnumerator FadeAndDestroyLine(LineRenderer lr, float duration)
+        {
+            float time = 0f;
+
+            Color startColor = lr.material.color;
+            Color endColor = startColor;
+            endColor.a = 0f;
+
+            while (time < duration)
+            {
+                float t = time / duration;
+                lr.material.color = Color.Lerp(startColor, endColor, t);
+                time += Time.deltaTime;
+                yield return null;
+            }
+
+            Destroy(lr.gameObject);
         }
     }
 }
