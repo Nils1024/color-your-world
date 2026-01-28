@@ -39,7 +39,7 @@ namespace Player
                         {
                             CreateLine(
                                 transform.position - new Vector3(0, 0.5f, 0),
-                                interactionRayHit.point,
+                                interactionRayHit.point - interactionRayHit.normal * 0.02f,
                                 colorable.coloredMaterials[0]);
                         }
                         
@@ -54,7 +54,11 @@ namespace Player
             GameObject line = new GameObject("Line");
             LineRenderer lr = line.AddComponent<LineRenderer>();
             
-            lr.material = material;
+            lr.material = new Material(material);
+            Color c = lr.material.color;
+            c.a = 0.3f;
+            lr.material.color = c;
+            
             lr.positionCount = 2;
             lr.startWidth = 0.1f;
             lr.endWidth = 0.1f;
@@ -63,6 +67,7 @@ namespace Player
             lr.numCornerVertices = 16;
             lr.textureMode = LineTextureMode.Stretch;
             lr.alignment = LineAlignment.View;
+            lr.shadowBias = 0f;
             
             lr.SetPosition(0, start);
             lr.SetPosition(1, end);
