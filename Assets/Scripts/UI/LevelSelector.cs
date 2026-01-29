@@ -9,23 +9,20 @@ namespace UI
 {
     public class LevelSelector : MonoBehaviour
     {
-        public Material baseMaterial;
         public Material hoverMaterial;
         public GameObject levelSelectMenu;
         public TextMeshProUGUI levelText;
         public TextMeshProUGUI timerText;
         
-        private readonly List<Material> _materials = new List<Material>();
         private bool _levelClicked;
         private Level _currentHovered;
+        private Material _currentHoveredBaseMaterial;
         
         private void Awake()
         {
             levelSelectMenu.SetActive(false);
             levelText.gameObject.SetActive(false);
             timerText.gameObject.SetActive(false);
-            
-            _materials.Add(baseMaterial);
         }
         
         private void Update()
@@ -64,6 +61,7 @@ namespace UI
                 levelText.gameObject.SetActive(false);
                 timerText.gameObject.SetActive(false);
                 _currentHovered = null;
+                _currentHoveredBaseMaterial = null;
             }
         }
         
@@ -92,12 +90,9 @@ namespace UI
         private void Hover(GameObject target)
         {
             Renderer gameObjectRenderer = target.GetComponent<Renderer>();
+            _currentHoveredBaseMaterial = gameObjectRenderer.material;
             
-            _materials.Clear();
-            _materials.Add(baseMaterial);
-            _materials.Add(hoverMaterial);
-        
-            gameObjectRenderer.SetMaterials(_materials);
+            gameObjectRenderer.SetMaterials(new List<Material>{_currentHoveredBaseMaterial, hoverMaterial});
             
             levelText.gameObject.SetActive(true);
             timerText.gameObject.SetActive(true);
@@ -108,10 +103,8 @@ namespace UI
         {
             Renderer gameObjectRenderer = target.GetComponent<Renderer>();
             
-            _materials.Clear();
-            _materials.Add(baseMaterial);
         
-            gameObjectRenderer.SetMaterials(_materials);
+            gameObjectRenderer.SetMaterials(new List<Material>{_currentHoveredBaseMaterial});
         }
     }
 }
