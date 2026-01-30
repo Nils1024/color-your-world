@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using Util;
 
 namespace UI
 {
@@ -8,7 +9,7 @@ namespace UI
         public float elapsedTime;
         
         private TextMeshProUGUI _timerText;
-        private bool isStopped;
+        private bool _isStopped;
 
         private void Awake()
         {
@@ -18,26 +19,21 @@ namespace UI
         // Update is called once per frame
         private void Update()
         {
-            if (!isStopped)
+            if (!_isStopped)
             {
                 elapsedTime += Time.deltaTime;
-            
-                int totalSeconds = Mathf.FloorToInt(elapsedTime);
-                int minutes = totalSeconds / 60;
-                int seconds = totalSeconds % 60;
-
-                _timerText.text = $"{minutes:00}:{seconds:00}";
+                _timerText.text = Tools.timeFloatToString(elapsedTime);
             }
         }
     
         public void Stop()
         {
-            isStopped = true;
+            _isStopped = true;
         }
     
         public void Resume()
         {
-            isStopped = false;
+            _isStopped = false;
         }
     }
 }

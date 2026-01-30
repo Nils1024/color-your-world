@@ -13,7 +13,9 @@ namespace Player
         public float gravity = 10f;
         public float lookSpeed = 1f;
         public float lookXLimit = 45f;
-        public bool isLocked = false;
+        public bool isLocked;
+        public Vector3 spawnPoint = new (0, 1, 0);
+        public float respawnZoneTrigger = -25f;
 
         private Vector3 _moveDirection = Vector3.zero;
         private float _rotationX;
@@ -72,7 +74,17 @@ namespace Player
                 _moveDirection.y -= gravity * Time.deltaTime;
             }
 
-            _characterController.Move(_moveDirection * Time.deltaTime);
+            if (_characterController.transform.position.y < respawnZoneTrigger)
+            {
+                _characterController.enabled = false;
+                transform.position = spawnPoint;
+                _moveDirection = Vector3.zero;
+                _characterController.enabled = true;
+            }
+            else
+            {
+                _characterController.Move(_moveDirection * Time.deltaTime);
+            }
 
             // Mouse look
             if (CanMove)
