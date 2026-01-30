@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using Objects;
 using Player;
@@ -40,7 +41,13 @@ namespace  UI
 
         public void ShowHint()
         {
-            Debug.Log("Show Hint not implemented yet");
+            Colorable[] colorables = FindObjectsByType<Colorable>(FindObjectsSortMode.None).Where(c => !c.IsColored()).ToArray();
+            
+            if(colorables.Length == 0)
+                return;
+            
+            int randomIndex = Random.Range(0, colorables.Length);
+            colorables[randomIndex].Highlight();
         }
 
         private void Update()
@@ -82,7 +89,7 @@ namespace  UI
 
                 allParts += colorablesInRoot.Length;
                 
-                onlyColoredParts += colorablesInRoot.Count(c => c.isColored());
+                onlyColoredParts += colorablesInRoot.Count(c => c.IsColored());
             }
             
             return allParts == 0 ? 0 : (int)((float) onlyColoredParts / allParts * 100f);

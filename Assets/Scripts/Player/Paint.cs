@@ -35,7 +35,7 @@ namespace Player
                 {
                     if(interactionRayHit.collider.TryGetComponent(out Colorable colorable))
                     {
-                        if (!colorable.isColored())
+                        if (!colorable.IsColored())
                         {
                             CreateLine(
                                 transform.position - new Vector3(0, 0.5f, 0),

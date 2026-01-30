@@ -65,7 +65,7 @@ namespace Services
                 foreach (GameObject root in currentlyLoadedScene.GetRootGameObjects())
                 {
                     colorablesID.AddRange(root.GetComponentsInChildren<Colorable>(true)
-                        .Where(c => c.isColored())
+                        .Where(c => c.IsColored())
                         .Select(c => c.UniqueId));
                     
                     var timer = root.GetComponentInChildren<Timer>(true);

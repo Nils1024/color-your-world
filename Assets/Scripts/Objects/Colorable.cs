@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace Objects
@@ -11,6 +12,7 @@ namespace Objects
         
         public List<Material> uncoloredMaterials;
         public List<Material> coloredMaterials;
+        public Material highlightedMaterial;
         public bool colorAllOtherObjects;
 
         private Renderer _gameObjectRenderer;
@@ -28,7 +30,24 @@ namespace Objects
                 if (string.IsNullOrEmpty(uniqueColorableId))
                 {
                     uniqueColorableId = Guid.NewGuid().ToString();
-                    UnityEditor.EditorUtility.SetDirty(this);
+                    EditorUtility.SetDirty(this);
+                }
+                
+                if (highlightedMaterial == null)
+                {
+                    Material mat = AssetDatabase.LoadAssetAtPath<Material>(
+                        "Assets/Materials/Special/SimpleOutline - Yellow.mat"
+                    );
+
+                    if (mat != null)
+                    {
+                        highlightedMaterial = mat;
+                        EditorUtility.SetDirty(this);
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Material not found at path! Check the spelling.");
+                    }
                 }
             }
         #endif
@@ -76,7 +95,24 @@ namespace Objects
             _isColored = true;
         }
 
-        public bool isColored()
+        public void Highlight()
+        {
+            List<Material> highlightedMaterials = new List<Material>(uncoloredMaterials);
+
+            if (highlightedMaterials.Count > 1)
+            {
+                highlightedMaterials.RemoveAt(1);
+            }
+            
+            highlightedMaterials.Add(highlightedMaterial);
+            
+            _gameObjectRenderer.SetMaterials(highlightedMaterials);
+            gameObject.layer = 3;
+            
+            Debug.Log(gameObject.name);
+        }
+
+        public bool IsColored()
         {
             return _isColored;
         }
