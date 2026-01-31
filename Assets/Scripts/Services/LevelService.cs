@@ -11,8 +11,8 @@ namespace Services
             None = 0,
             City = 1,
             Desert = 2,
-            Village = 3,
-            Forest = 4,
+            Forest = 3,
+            Village = 4,
         }
         
         public static Levels CurrentSelectedLevel = Levels.None;
