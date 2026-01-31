@@ -1,6 +1,7 @@
 ﻿using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Util;
 
 namespace Services
 {
@@ -19,15 +20,14 @@ namespace Services
         
         public static void LoadLevel(Levels level)
         {
+            CurrentSelectedLevel = level;
             SceneManager.sceneLoaded += OnSceneLoaded;
             SceneManager.LoadScene((int) level);
-            CurrentSelectedLevel = level;
         }
         
         public static void LoadMainMenu()
         {
-            DataStoreService.SaveData.SaveLevelData(CurrentSelectedLevel);
-            DataStoreService.WriteSaveData();
+            DataStoreService.GetDataStoreService().GetSaveData().SaveLevelData(CurrentSelectedLevel);
             CurrentSelectedLevel = Levels.None;
             SceneManager.LoadSceneAsync(0);
         }
@@ -36,8 +36,7 @@ namespace Services
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
             
-            DataStoreService.ReadSaveData();
-            if (DataStoreService.SaveData.LoadLevelData(CurrentSelectedLevel))
+            if (DataStoreService.GetDataStoreService().GetSaveData().LoadLevelData(CurrentSelectedLevel))
             {
                 Debug.Log("Level Loaded");
             }
