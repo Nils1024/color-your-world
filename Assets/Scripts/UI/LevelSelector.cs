@@ -78,7 +78,7 @@ namespace UI
 
         public void ResetLevel()
         {
-            Debug.Log("Reset not implemented yet");
+            DataStoreService.GetDataStoreService().GetSaveData().DeleteLevelData(_currentHovered.level);
         }
 
         public void CloseLevelMenu()

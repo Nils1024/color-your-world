@@ -6,7 +6,7 @@ namespace Services
 {
     public class DataStoreService : MonoBehaviour
     {
-        private const string SaveDataFileName = "/DATA.json";
+        private const string PlayerPrefsDataKey = "Color-Your-World-SaveData";
         private SaveData _saveData = new();
         private static DataStoreService _instance;
 
@@ -15,8 +15,10 @@ namespace Services
             return _instance;
         }
         
-        private void Awake()
+        private void Start()
         {
+            ReadSaveData();
+            
             if (_instance != null && _instance != this)
             {
                 Destroy(gameObject);
@@ -25,11 +27,6 @@ namespace Services
 
             _instance = this;
             DontDestroyOnLoad(gameObject);
-        }
-
-        private void Start()
-        {
-            ReadSaveData();
         }
 
         private void OnApplicationQuit()
@@ -47,17 +44,12 @@ namespace Services
 
         private void WriteSaveData()
         {
-            string filePathSaveData = Application.persistentDataPath + SaveDataFileName;
-            
-            string txt = JsonUtility.ToJson(_saveData);
-            File.WriteAllText(filePathSaveData, txt);
+            PlayerPrefs.SetString(PlayerPrefsDataKey, JsonUtility.ToJson(_saveData));
         }
 
         private void ReadSaveData()
         {
-            string filePath = Application.persistentDataPath + DataStoreService.SaveDataFileName;
-            string fileContent = File.ReadAllText(filePath);
-            _saveData = JsonUtility.FromJson<SaveData>(fileContent);
+            _saveData = JsonUtility.FromJson<SaveData>(PlayerPrefs.GetString(PlayerPrefsDataKey));
         }
 
         public SaveData GetSaveData()

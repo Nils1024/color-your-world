@@ -55,7 +55,7 @@ namespace  UI
             if(_keyboard.escapeKey.wasPressedThisFrame)
             {
                 ingameMenu.SetActive(!ingameMenu.activeSelf);
-                ingameOverlay.SetActive(!ingameOverlay.activeSelf);
+                ingameOverlay.SetActive(!ingameMenu.activeSelf);
 
                 if(ingameMenu.activeSelf)
                 {
