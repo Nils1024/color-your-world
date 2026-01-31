@@ -93,6 +93,7 @@ namespace Objects
         {
             _gameObjectRenderer.SetMaterials(coloredMaterials);
             _isColored = true;
+            gameObject.layer = 0;
         }
 
         public void Highlight()

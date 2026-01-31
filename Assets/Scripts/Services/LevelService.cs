@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Services
@@ -7,14 +8,14 @@ namespace Services
     {
         public enum Levels
         {
-            NONE = 0,
+            None = 0,
             City = 1,
             Desert = 2,
             Village = 3,
             Forest = 4,
         }
         
-        public static Levels CurrentSelectedLevel = Levels.NONE;
+        public static Levels CurrentSelectedLevel = Levels.None;
         
         public static void LoadLevel(Levels level)
         {
@@ -25,8 +26,9 @@ namespace Services
         
         public static void LoadMainMenu()
         {
-            SaveService.SaveGameState();
-            CurrentSelectedLevel = Levels.NONE;
+            DataStoreService.SaveData.SaveLevelData(CurrentSelectedLevel);
+            DataStoreService.WriteSaveData();
+            CurrentSelectedLevel = Levels.None;
             SceneManager.LoadSceneAsync(0);
         }
 
@@ -34,7 +36,8 @@ namespace Services
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
             
-            if (LoadService.LoadGameState())
+            DataStoreService.ReadSaveData();
+            if (DataStoreService.SaveData.LoadLevelData(CurrentSelectedLevel))
             {
                 Debug.Log("Level Loaded");
             }
