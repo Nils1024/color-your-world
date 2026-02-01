@@ -42,8 +42,9 @@ namespace Util
                 Scene currentlyLoadedScene = SceneManager.GetActiveScene();
 
                 List<Colorable> alreadyColored = new List<Colorable>();
+                GameObject[] rootObjects = currentlyLoadedScene.GetRootGameObjects();
                 
-                foreach (GameObject root in currentlyLoadedScene.GetRootGameObjects())
+                foreach (GameObject root in rootObjects)
                 {
                     alreadyColored.AddRange(root.GetComponentsInChildren<Colorable>(true)
                         .Where(c => levelData.data[level.ToString()].colorablesID.Contains(c.UniqueId)));
@@ -52,6 +53,17 @@ namespace Util
                 foreach (Colorable colorable in alreadyColored)
                 {
                     colorable.Color();
+                }
+
+                foreach (GameObject root in rootObjects)
+                {
+                    Timer timer = root.GetComponentInChildren<Timer>(true);
+
+                    if (timer != null)
+                    {
+                        timer.elapsedTime = levelData.data[level.ToString()].elapsedTime;
+                        break;
+                    }
                 }
                 
                 return true;
@@ -67,7 +79,7 @@ namespace Util
     public class LevelData
     {
         public string levelName;
-        [SerializeField] public double elapsedTime;
+        [SerializeField] public float elapsedTime;
         [SerializeField] public List<String> colorablesID;
 
         public LevelData(LevelService.Levels level)

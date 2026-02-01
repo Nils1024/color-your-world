@@ -4,6 +4,7 @@ using Services;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Util;
 
 namespace UI
 {
@@ -96,6 +97,18 @@ namespace UI
             
             levelText.gameObject.SetActive(true);
             timerText.gameObject.SetActive(true);
+
+            if (DataStoreService.GetDataStoreService().GetSaveData().levelData.data
+                .ContainsKey(_currentHovered.level.ToString()))
+            {
+                timerText.text = Tools.timeFloatToString(
+                    DataStoreService.GetDataStoreService().GetSaveData().levelData.data[_currentHovered.level.ToString()].elapsedTime);
+            }
+            else
+            {
+                timerText.text = "00:00:00";
+            }
+            
             levelText.SetText(_currentHovered.level.ToString());
         }
     
