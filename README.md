@@ -1,6 +1,6 @@
 # Color your world
 
-are you bored and enjoy color by numbers? Then Color your world is perfect for you! Jump into an uncolored 3D world and see how beautiful it becomes once everything is colored.
+Are you bored and enjoy color by numbers? Then Color your world is perfect for you! Jump into an uncolored 3D world and see how beautiful it becomes once everything is colored.
 
 Itch.io: https://nils1024.itch.io/color-your-world
 
