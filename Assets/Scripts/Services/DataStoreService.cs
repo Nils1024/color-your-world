@@ -19,18 +19,18 @@ namespace Services
             return _instance;
         }
         
-        private void Start()
+        private void Awake()
         {
-            ReadSaveData();
-            
             if (_instance != null)
             {
                 return;
             }
 
+            ReadSaveData();
             _instance = this;
             DontDestroyOnLoad(gameObject);
         }
+        
 
         private void OnApplicationQuit()
         {

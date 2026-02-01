@@ -36,7 +36,8 @@ namespace  UI
     
         public void BackToMainMenu()
         {
-            LevelService.LoadMainMenu();
+            ingameMenu.SetActive(false);
+            LevelService.GetLevelService().LoadMainMenu();
         }
 
         public void ShowHint()

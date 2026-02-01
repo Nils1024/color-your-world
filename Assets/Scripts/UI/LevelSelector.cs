@@ -31,7 +31,7 @@ namespace UI
             if(_levelClicked)
                 return;
             
-            if(Util.RaycastCreator.RayCastFromCamera(Camera.main, 100f, out var hit, true))
+            if(RaycastCreator.RayCastFromCamera(Camera.main, 100f, out var hit, true))
             {
                 if(hit.collider.TryGetComponent<Level>(out var levelData))
                 {
@@ -68,8 +68,11 @@ namespace UI
         
         public void LoadLevel()
         {
-            Debug.Log(_currentHovered.level);
-            LevelService.LoadLevel(_currentHovered.level);
+            levelText.gameObject.SetActive(false);
+            timerText.gameObject.SetActive(false);
+            levelSelectMenu.SetActive(false);
+            
+            LevelService.GetLevelService().LoadLevel(_currentHovered.level);
         }
 
         public void ShowLevelLeaderboard()

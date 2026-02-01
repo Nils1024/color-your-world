@@ -1,12 +1,13 @@
-﻿using Unity.VisualScripting;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Util;
 
 namespace Services
 {
-    public static class LevelService
+    public class LevelService : MonoBehaviour
     {
+        private static LevelService _instance;
+        
         public enum Levels
         {
             None = 0,
@@ -18,21 +19,50 @@ namespace Services
         
         public static Levels CurrentSelectedLevel = Levels.None;
         
-        public static void LoadLevel(Levels level)
+        public static LevelService GetLevelService()
         {
-            CurrentSelectedLevel = level;
-            SceneManager.sceneLoaded += OnSceneLoaded;
-            SceneManager.LoadScene((int) level);
+            return _instance;
         }
         
-        public static void LoadMainMenu()
+        private void Awake()
+        {
+            if (_instance == null)
+            {
+                _instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+        }
+        
+        public void LoadLevel(Levels level)
+        {
+            CurrentSelectedLevel = level;
+            StartCoroutine(LoadScene((int) level));
+        }
+        
+        public void LoadMainMenu()
         {
             DataStoreService.GetDataStoreService().GetSaveData().SaveLevelData(CurrentSelectedLevel);
             CurrentSelectedLevel = Levels.None;
-            SceneManager.LoadSceneAsync(0);
+            StartCoroutine(LoadScene(0));
         }
 
-        private static void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        IEnumerator LoadScene(int index)
+        {
+            TransitionService.GetTransitionService().transitionAnimator.SetTrigger("End");
+            yield return new WaitForSeconds(1);
+
+            if (index > 0)
+            {
+                SceneManager.sceneLoaded += OnSceneLoaded;
+            }
+            
+            AsyncOperation op = SceneManager.LoadSceneAsync(index);
+            yield return op;
+            
+            TransitionService.GetTransitionService().transitionAnimator.SetTrigger("Start");
+        }
+
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
             
