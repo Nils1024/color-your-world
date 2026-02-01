@@ -21,17 +21,17 @@ namespace Services
         
         private void Awake()
         {
-            if (_instance != null)
+            if (_instance != null && _instance != this)
             {
+                Destroy(gameObject);
                 return;
             }
 
-            ReadSaveData();
             _instance = this;
             DontDestroyOnLoad(gameObject);
+            ReadSaveData();
         }
         
-
         private void OnApplicationQuit()
         {
             WriteSaveData();
@@ -61,10 +61,17 @@ namespace Services
         {
             #if UNITY_EDITOR
                 string filePath = Application.persistentDataPath + DataStoreService.SaveDataFileName;
-                string fileContent = File.ReadAllText(filePath);
-                _saveData = JsonUtility.FromJson<SaveData>(fileContent);
+
+                if (File.Exists(filePath))
+                {
+                    string fileContent = File.ReadAllText(filePath);
+                    _saveData = JsonUtility.FromJson<SaveData>(fileContent);
+                }
             #else
-                _saveData = JsonUtility.FromJson<SaveData>(PlayerPrefs.GetString(PlayerPrefsDataKey));
+                if(PlayerPrefs.HasKey(PlayerPrefsDataKey))
+                {
+                    _saveData = JsonUtility.FromJson<SaveData>(PlayerPrefs.GetString(PlayerPrefsDataKey));
+                }
             #endif
         }
 

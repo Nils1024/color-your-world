@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 24281451}
   - component: {fileID: 24281453}
   - component: {fileID: 24281452}
+  - component: {fileID: 24281454}
   m_Layer: 0
   m_Name: Cone
   m_TagString: Untagged
@@ -209,6 +210,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24281450}
   m_Mesh: {fileID: 3613567641014311022, guid: a23c600417c67614e9ac4af462bb032e, type: 3}
+--- !u!114 &24281454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24281450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Colorable
+  uniqueColorableId: 35bd9b37-9cf6-4a88-99a7-ea115e27cf61
+  uncoloredMaterials:
+  - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
+  - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
+  coloredMaterials:
+  - {fileID: 2100000, guid: b5a7eef80b7569d4a9ec6c5289cdddff, type: 2}
+  highlightedMaterial: {fileID: 2100000, guid: 40700cb63e4983b45bfbae5dbf4315ca, type: 2}
+  colorAllOtherObjects: 0
 --- !u!1 &130075689
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 63c36747-fbe1-4abb-9078-2b8710ce096e
+  uniqueColorableId: ef097d8f-0313-484f-b355-7ca9631121b9
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -389,7 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 8760c8b1-d1b7-4ac9-8a58-607543cf8235
+  uniqueColorableId: acb3b52e-ac7c-4bef-a17b-4444919b8b73
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -555,7 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 65794578-75da-49d3-8ece-8cafbb61c015
+  uniqueColorableId: 660024d3-69ba-4789-aacb-28a1e24590c5
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -827,7 +848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 1304cb56-68e4-4a95-a9b4-98af4bfd1538
+  uniqueColorableId: 96b86a59-b0b1-45d5-9c87-cef27c1e1463
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -1099,7 +1120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 6dac7fe2-3f19-4317-8a76-29789f55a89e
+  uniqueColorableId: 24053f70-5e7e-4e10-b8a1-37393cbedaf8
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -1265,7 +1286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 6331a515-f085-4541-b0a7-fbb999fe25be
+  uniqueColorableId: a726cf15-6934-4627-9800-41d9518ea760
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -1433,7 +1454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 13f4cc80-e30f-415b-b63a-ec7d9beac31b
+  uniqueColorableId: de9d6af5-0757-4cb3-a097-bc9500797155
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -1566,7 +1587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 8760c8b1-d1b7-4ac9-8a58-607543cf8235
+  uniqueColorableId: d8767651-6be8-49b6-a32c-72f46a102428
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -1699,7 +1720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 8760c8b1-d1b7-4ac9-8a58-607543cf8235
+  uniqueColorableId: eac2da72-310f-4a2b-9be0-49053dc494bd
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -1832,7 +1853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 1fafcf1b-1921-493a-a3c6-95b6602502bd
+  uniqueColorableId: f45d6f5a-030a-4dc7-8e9b-b7864895afd1
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -2098,7 +2119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: e25f7627-66eb-40fe-9276-4d22fe8b1e4a
+  uniqueColorableId: f2762574-95de-4763-89a4-f65a8e7e5caa
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -2592,6 +2613,7 @@ GameObject:
   - component: {fileID: 659198568}
   - component: {fileID: 659198567}
   - component: {fileID: 659198566}
+  - component: {fileID: 659198569}
   m_Layer: 0
   m_Name: Trunk
   m_TagString: Untagged
@@ -2694,6 +2716,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659198564}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &659198569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659198564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Colorable
+  uniqueColorableId: f1fa2c5c-c418-4424-94de-0b2eb22bca89
+  uncoloredMaterials:
+  - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
+  - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
+  coloredMaterials:
+  - {fileID: 2100000, guid: 8bd11f8b9381da24282163902f77c6a8, type: 2}
+  highlightedMaterial: {fileID: 2100000, guid: 40700cb63e4983b45bfbae5dbf4315ca, type: 2}
+  colorAllOtherObjects: 0
 --- !u!1 &696965225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2853,7 +2895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 1304cb56-68e4-4a95-a9b4-98af4bfd1538
+  uniqueColorableId: 2c2c80ad-2ca8-46c5-b67c-6c85ceb911e3
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -2988,7 +3030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: c18bfc92-f19b-4c8b-918b-236157678e64
+  uniqueColorableId: 3cd957e1-bcb7-40a3-a1a6-4f3cd8be6c29
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -3154,7 +3196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: fd8eb907-f243-4b39-81f7-a7c57be124cc
+  uniqueColorableId: d47c432a-b2db-442f-a904-2ce5c809a5e9
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -3471,7 +3513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 02fb4f8a-570c-4143-ad40-bc3de01608ac
+  uniqueColorableId: 8ec8dbea-0a79-4661-8086-94fb45b1a145
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -3639,7 +3681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: dcc2671d-8d56-4351-932c-f8de70e5e282
+  uniqueColorableId: 0f89d436-2236-49a8-b59a-13914421744f
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -3739,6 +3781,7 @@ GameObject:
   - component: {fileID: 849751183}
   - component: {fileID: 849751182}
   - component: {fileID: 849751181}
+  - component: {fileID: 849751184}
   m_Layer: 0
   m_Name: Leaves
   m_TagString: Untagged
@@ -3839,6 +3882,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849751179}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &849751184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849751179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Colorable
+  uniqueColorableId: ed25e427-1308-441a-b56f-1b335a809666
+  uncoloredMaterials:
+  - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
+  - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
+  coloredMaterials:
+  - {fileID: 2100000, guid: 66bdd8eff6f71ee4fa32b143a9ec67f6, type: 2}
+  highlightedMaterial: {fileID: 2100000, guid: 40700cb63e4983b45bfbae5dbf4315ca, type: 2}
+  colorAllOtherObjects: 0
 --- !u!1 &897058841
 GameObject:
   m_ObjectHideFlags: 0
@@ -3919,7 +3982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 5aca0969-fd80-4750-83cb-bd895d118c6b
+  uniqueColorableId: 848c1a24-0ce0-4a41-98e7-d493dcc7007b
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -4054,7 +4117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 7bdda056-176d-4dfd-9f2c-ccc9db16187c
+  uniqueColorableId: f06f3604-1e36-4979-8f65-db014da97a2a
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -4756,14 +4819,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245816123}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.378, y: 0.83, z: -40.8}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -28.518188, y: 0.2869339, z: 48.00254}
   m_LocalScale: {x: 0.07406066, y: 0.10636593, z: 0.07406066}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1874012519}
   - {fileID: 24281451}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2114892775}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1287896154
 GameObject:
@@ -4845,7 +4908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 928b58bb-5b99-49c3-92be-88078f3efe26
+  uniqueColorableId: 5eb5068a-ae75-4cd6-b54d-85e673d31c06
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -4980,7 +5043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 8760c8b1-d1b7-4ac9-8a58-607543cf8235
+  uniqueColorableId: 81bfc753-4caa-47b3-bd44-e54f4dd7466a
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -5146,7 +5209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 188613d8-5813-4a69-87de-f21dbbde3bf8
+  uniqueColorableId: f6684606-9a08-4421-a8d8-9fe5a657c51d
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -5281,7 +5344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 5806a597-ee31-4bab-8e4d-b134cd1e53aa
+  uniqueColorableId: bfa5ca1b-36f8-497a-9c0a-c4596a639521
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -5414,7 +5477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 95d65ef9-6dac-4d29-ac8a-30db7e682299
+  uniqueColorableId: 4687ca6b-fa70-417f-922b-1a13b623a010
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -5549,7 +5612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 2e8c6d34-73b5-414d-aaba-afe3d870d8fb
+  uniqueColorableId: f1d7d3e9-b853-4735-9619-786d2b538419
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -5975,7 +6038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 48982f4d-627c-43be-9e5d-741a5accce9d
+  uniqueColorableId: 682d826d-2726-4a86-b72e-382ad5cdec85
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -6257,7 +6320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 2e1cd776-ed44-4d86-a430-da917e0a5111
+  uniqueColorableId: b2e9b0ce-9acc-404b-a881-8e01f7573996
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -6527,7 +6590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 0cc78cf7-5a49-4f14-a9f7-2cb1a82ad69b
+  uniqueColorableId: 93527563-8489-4f48-b4eb-89eca49969d9
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -6896,6 +6959,7 @@ GameObject:
   - component: {fileID: 1828641763}
   - component: {fileID: 1828641762}
   - component: {fileID: 1828641761}
+  - component: {fileID: 1828641764}
   m_Layer: 0
   m_Name: Trunk
   m_TagString: Untagged
@@ -6998,6 +7062,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828641759}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1828641764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828641759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Colorable
+  uniqueColorableId: 0783d824-5676-4a52-a8d5-54c128882137
+  uncoloredMaterials:
+  - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
+  - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
+  coloredMaterials:
+  - {fileID: 2100000, guid: 8bd11f8b9381da24282163902f77c6a8, type: 2}
+  highlightedMaterial: {fileID: 2100000, guid: 40700cb63e4983b45bfbae5dbf4315ca, type: 2}
+  colorAllOtherObjects: 0
 --- !u!1 &1866113948
 GameObject:
   m_ObjectHideFlags: 0
@@ -7045,7 +7129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 1304cb56-68e4-4a95-a9b4-98af4bfd1538
+  uniqueColorableId: 45c17683-a2fc-429a-b40a-9d5a55411637
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -7145,6 +7229,7 @@ GameObject:
   - component: {fileID: 1874012522}
   - component: {fileID: 1874012521}
   - component: {fileID: 1874012520}
+  - component: {fileID: 1874012523}
   m_Layer: 0
   m_Name: Trunk
   m_TagString: Untagged
@@ -7247,6 +7332,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1874012518}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1874012523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874012518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Colorable
+  uniqueColorableId: b1d99ca2-01e2-4a9d-b6e3-4005c7185d19
+  uncoloredMaterials:
+  - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
+  - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
+  coloredMaterials:
+  - {fileID: 2100000, guid: 8bd11f8b9381da24282163902f77c6a8, type: 2}
+  highlightedMaterial: {fileID: 2100000, guid: 40700cb63e4983b45bfbae5dbf4315ca, type: 2}
+  colorAllOtherObjects: 0
 --- !u!1 &1899732461
 GameObject:
   m_ObjectHideFlags: 0
@@ -7294,7 +7399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 1304cb56-68e4-4a95-a9b4-98af4bfd1538
+  uniqueColorableId: 61e05f7a-df77-43df-a540-a9d5cc1ab928
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -7546,7 +7651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: d7a512b1-7a9a-422b-9531-9fb2e520babf
+  uniqueColorableId: c8258a41-ca5a-4f5d-b523-fbd156f9bd3b
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -7734,13 +7839,13 @@ Transform:
   m_GameObject: {fileID: 1963538284}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36.1, y: 0.8, z: 7.2}
+  m_LocalPosition: {x: 26.959778, y: 0.25693512, z: 96.00254}
   m_LocalScale: {x: 0.06625322, y: 0.06625322, z: 0.06625322}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 659198565}
   - {fileID: 849751180}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2114892775}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2032609962
 GameObject:
@@ -7799,14 +7904,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060854748}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.9, y: 0.83, z: -69}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 20.759827, y: 0.2869339, z: 19.802544}
   m_LocalScale: {x: 0.07406066, y: 0.10636593, z: 0.07406066}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1828641760}
   - {fileID: 2069016486}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2114892775}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2063667233
 GameObject:
@@ -7855,7 +7960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: ca431433-7692-4d5c-a964-0ec8ff4e3a24
+  uniqueColorableId: b65f17d6-af01-4ae4-98b3-6f96157360f5
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -7952,6 +8057,7 @@ GameObject:
   - component: {fileID: 2069016486}
   - component: {fileID: 2069016488}
   - component: {fileID: 2069016487}
+  - component: {fileID: 2069016489}
   m_Layer: 0
   m_Name: Cone
   m_TagString: Untagged
@@ -8031,6 +8137,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069016485}
   m_Mesh: {fileID: 3613567641014311022, guid: a23c600417c67614e9ac4af462bb032e, type: 3}
+--- !u!114 &2069016489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069016485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Colorable
+  uniqueColorableId: 23fc41e7-458d-4974-8938-5bad89550133
+  uncoloredMaterials:
+  - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
+  - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
+  coloredMaterials:
+  - {fileID: 2100000, guid: b5a7eef80b7569d4a9ec6c5289cdddff, type: 2}
+  highlightedMaterial: {fileID: 2100000, guid: 40700cb63e4983b45bfbae5dbf4315ca, type: 2}
+  colorAllOtherObjects: 0
 --- !u!1 &2072093890
 GameObject:
   m_ObjectHideFlags: 0
@@ -8078,7 +8204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: c20df53e-2f33-4b85-8a34-3c5588534553
+  uniqueColorableId: 3faa7417-95e1-45c3-b7c5-d035ee88c2a6
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -8213,7 +8339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Colorable
-  uniqueColorableId: 5319855b-7502-4e12-8154-cb1d0267c4c4
+  uniqueColorableId: 71af1a00-e8b2-4520-94ed-a7f80b670c60
   uncoloredMaterials:
   - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
   - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
@@ -8344,6 +8470,11 @@ Transform:
   - {fileID: 633581434}
   - {fileID: 192917626}
   - {fileID: 1079551741}
+  - {fileID: 1890467737464747416}
+  - {fileID: 1963538285}
+  - {fileID: 2853453767969955934}
+  - {fileID: 1245816124}
+  - {fileID: 2060854749}
   m_Father: {fileID: 2032609963}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &155016808568646636
@@ -8427,6 +8558,7 @@ GameObject:
   - component: {fileID: 5153853068689456561}
   - component: {fileID: 8768335793760211481}
   - component: {fileID: 305553191023726378}
+  - component: {fileID: 8768335793760211482}
   m_Layer: 0
   m_Name: Trunk
   m_TagString: Untagged
@@ -8503,6 +8635,7 @@ GameObject:
   - component: {fileID: 1153062775483244865}
   - component: {fileID: 5769576668181703909}
   - component: {fileID: 155016808568646636}
+  - component: {fileID: 5769576668181703910}
   m_Layer: 0
   m_Name: Trunk
   m_TagString: Untagged
@@ -8534,13 +8667,13 @@ Transform:
   m_GameObject: {fileID: 3476159958616985476}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.231, y: 0.8, z: 1.1339}
+  m_LocalPosition: {x: -24.371185, y: 0.25693512, z: 89.93644}
   m_LocalScale: {x: 0.06625322, y: 0.06625322, z: 0.06625322}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1622551045182805918}
   - {fileID: 8635760539848859487}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2114892775}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2621516524554512060
 GameObject:
@@ -8566,14 +8699,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2621516524554512060}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.378, y: 0.83, z: -71.55}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -28.518188, y: 0.2869339, z: 17.25254}
   m_LocalScale: {x: 0.07406066, y: 0.10636593, z: 0.07406066}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5144574303201080859}
   - {fileID: 196629900077024531}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2114892775}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3476159958616985476
 GameObject:
@@ -8663,6 +8796,26 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5769576668181703910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552848508505594512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Colorable
+  uniqueColorableId: 102b96bf-d4f3-4b7b-8388-34d682fbd1df
+  uncoloredMaterials:
+  - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
+  - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
+  coloredMaterials:
+  - {fileID: 2100000, guid: 8bd11f8b9381da24282163902f77c6a8, type: 2}
+  highlightedMaterial: {fileID: 2100000, guid: 40700cb63e4983b45bfbae5dbf4315ca, type: 2}
+  colorAllOtherObjects: 0
 --- !u!33 &5976912078612641098
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8732,6 +8885,7 @@ GameObject:
   - component: {fileID: 1469801421274113749}
   - component: {fileID: 1476209446403031275}
   - component: {fileID: 9051415363580922958}
+  - component: {fileID: 9051415363580922959}
   m_Layer: 0
   m_Name: Leaves
   m_TagString: Untagged
@@ -8750,6 +8904,7 @@ GameObject:
   - component: {fileID: 196629900077024531}
   - component: {fileID: 5976912078612641098}
   - component: {fileID: 6153680381988119933}
+  - component: {fileID: 8122251270493954305}
   m_Layer: 0
   m_Name: Cone
   m_TagString: Untagged
@@ -8757,6 +8912,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
+--- !u!114 &8122251270493954305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8122251270493954304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Colorable
+  uniqueColorableId: 95d10501-c325-4c22-962d-f69c1d52f39b
+  uncoloredMaterials:
+  - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
+  - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
+  coloredMaterials:
+  - {fileID: 2100000, guid: b5a7eef80b7569d4a9ec6c5289cdddff, type: 2}
+  highlightedMaterial: {fileID: 2100000, guid: 40700cb63e4983b45bfbae5dbf4315ca, type: 2}
+  colorAllOtherObjects: 0
 --- !u!4 &8635760539848859487
 Transform:
   m_ObjectHideFlags: 0
@@ -8821,6 +8996,26 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8768335793760211482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232325532778569144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Colorable
+  uniqueColorableId: 5009bfd6-1f3a-47c9-a447-c44ee972a4aa
+  uncoloredMaterials:
+  - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
+  - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
+  coloredMaterials:
+  - {fileID: 2100000, guid: 8bd11f8b9381da24282163902f77c6a8, type: 2}
+  highlightedMaterial: {fileID: 2100000, guid: 40700cb63e4983b45bfbae5dbf4315ca, type: 2}
+  colorAllOtherObjects: 0
 --- !u!135 &9051415363580922958
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8842,6 +9037,26 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9051415363580922959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6372269190173519434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f44043599f4fc49bb60b64a0834091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Colorable
+  uniqueColorableId: ac6fefcd-f38d-4d46-ac6e-6bd76ffc3a2a
+  uncoloredMaterials:
+  - {fileID: 2100000, guid: 76d6093454375394ca7fa38511a10971, type: 2}
+  - {fileID: 2100000, guid: 6c7abc274d2f51f46a205d8bfbeae758, type: 2}
+  coloredMaterials:
+  - {fileID: 2100000, guid: 66bdd8eff6f71ee4fa32b143a9ec67f6, type: 2}
+  highlightedMaterial: {fileID: 2100000, guid: 40700cb63e4983b45bfbae5dbf4315ca, type: 2}
+  colorAllOtherObjects: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -8851,8 +9066,3 @@ SceneRoots:
   - {fileID: 540694133}
   - {fileID: 1177954154}
   - {fileID: 2032609963}
-  - {fileID: 1890467737464747416}
-  - {fileID: 1963538285}
-  - {fileID: 2853453767969955934}
-  - {fileID: 1245816124}
-  - {fileID: 2060854749}

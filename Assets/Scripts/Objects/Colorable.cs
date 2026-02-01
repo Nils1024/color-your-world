@@ -27,10 +27,12 @@ namespace Objects
         #if UNITY_EDITOR
             private void OnValidate()
             {
+                uniqueColorableId = Guid.NewGuid().ToString();
+                EditorUtility.SetDirty(this);
+                
                 if (string.IsNullOrEmpty(uniqueColorableId))
                 {
-                    uniqueColorableId = Guid.NewGuid().ToString();
-                    EditorUtility.SetDirty(this);
+                    
                 }
                 
                 if (highlightedMaterial == null)

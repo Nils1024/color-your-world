@@ -26,11 +26,14 @@ namespace Services
         
         private void Awake()
         {
-            if (_instance == null)
+            if (_instance != null && _instance != this)
             {
-                _instance = this;
-                DontDestroyOnLoad(gameObject);
+                Destroy(gameObject);
+                return;
             }
+
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         
         public void LoadLevel(Levels level)
